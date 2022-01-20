@@ -1,4 +1,4 @@
-const senderConfig = (email,client) => {
+const senderConfig = (email, client) => {
   const senderParams = {
     Source: client,
     Destination: {
@@ -8,7 +8,7 @@ const senderConfig = (email,client) => {
       Body: {
         Html: {
           Charset: "UTF-8",
-          Data: "This is the feedback message from user",
+          Data: "<h2>This is the feedback message from user</h2>",
         },
       },
       Subject: {

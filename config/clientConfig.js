@@ -8,7 +8,7 @@ const clientConfig = (email, sender, message) => {
       Body: {
         Html: {
           Charset: "UTF-8",
-          Data: message,
+          Data: `<h2>${message}</h2>`,
         },
       },
       Subject: {

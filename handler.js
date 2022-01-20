@@ -17,13 +17,13 @@ module.exports.mail = async (event) => {
       from: sender,
       to: client,
       question: message,
-    } = await JSON.parse(event.body);
+    } = JSON.parse(event.body);
 
     await AWS_SES.sendEmail(clientConfig(client, sender, message)).promise();
     await AWS_SES.sendEmail(senderConfig(sender, client)).promise();
 
     return { message: "Email sent successfully" };
   } catch (error) {
-    throw new Error('Semething went wrong');
+    throw new Error({ error: "message" });
   }
 };
