@@ -4,6 +4,6 @@ COPY handler.js config package*.json ${LAMBDA_TASK_ROOT}
 
 RUN npm ci
 
-COPY . .
+COPY config ${LAMBDA_TASK_ROOT}/config
 
 CMD ["handler.mail"]
